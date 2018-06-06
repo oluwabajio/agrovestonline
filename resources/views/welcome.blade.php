@@ -15,7 +15,7 @@
   <div class="col-lg-4">
     <h1>Agricultural Advice at your finger tips</h1>
     <p>Get quality answers to your agricultural questions in less than 10 minutes.</p>
-    <a class="btn btn-primary btn-lg" href="#">Ask Questions Now</a>
+    <a class="btn btn-primary btn-lg" href="questions">Ask Questions Now</a>
   </div>
   <!-- /.col-md-4 -->
 </div>
