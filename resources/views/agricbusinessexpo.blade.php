@@ -11,8 +11,9 @@
     <title>Agric Business Expo</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    {{-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    
     <!-- Custom fonts for this template -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -30,7 +31,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Agrovest</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -38,19 +39,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a class="nav-link js-scroll-trigger" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                <a class="nav-link js-scroll-trigger" href="#topics">Topics</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#team">Speakers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Register</a>
             </li>
           </ul>
         </div>
@@ -63,15 +64,15 @@
         <div class="intro-text">
           <div class="intro-lead-in">The Largest Agricultural Conference</div>
           <div class="intro-heading text-uppercase">In Nigeria</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Register Now</a>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#contact">Register Now</a>
         </div>
       </div>
     </header>
 
     <!-- Portfolio Grid -->
-    <section class="bg-lighta" style="padding-top: 0px;"  id="portfolioa">
+    <section class="bg-lighta" style="padding-top: 0px;"  id="about">
       <div class="container-fluid" style="padding-right: 0px; padding-left: 0px;">
-      <div  class="one withsmallpadding ppb_header " style="text-align:left;padding:70px 0 70px 0;background-color:#000000;color:#ffffff;" ><div class="standard_wrapper"><div class="page_content_wrapper"><div class="inner"><div style="margin:auto;width:70%"><h2 class="ppb_title" style="color:#ffffff;">About The Event</h2><div class="ppb_header_content"><p>The AgriBusiness Expo 2018 is an exhibition and Conference event centered on promoting and showing the different agribusiness sectors and players in the industry, in which they come uner one umbrella for a day. The Event would feature several presentations from top invited guests in the agricultural sectors”.</p>
+      <div  class="one withsmallpadding ppb_header " style="text-align:left;padding:70px 0 70px 0;background-color:#000000;color:#ffffff;" ><div class="standard_wrapper"><div class="page_content_wrapper"><div class="inner"><div style="margin:auto;width:70%"><h2 class="ppb_title" style="color:#ffffff;">About The Event</h2><div class="ppb_header_content"><p>The AgriBusiness Expo 2018 is an exhibition and Conference event centered on promoting and showing the different agribusiness sectors and players in the industry, in which they come under one umbrella for a day. The Event would feature several presentations from top invited guests in the agricultural sectors”.</p>
 <style type="text/css">
 .binfo{
     color: #000;
@@ -129,7 +130,7 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
     </section>
 
 
-        <!-- Services -->
+        {{-- <!-- Services -->
         <section id="services" style="padding-top: 0px;">
       <div class="container">
         <div class="row">
@@ -165,11 +166,11 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
 
     <!-- About -->
-    <section id="about" style="padding-top: 0px;">
+    <section id="topics" style="padding-top: 0px;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -249,7 +250,7 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
       </div>
     </section>
 
-    <!-- Team -->
+     <!-- Team -->
     <section class="bg-light" id="team">
       <div class="container">
         <div class="row">
@@ -264,23 +265,6 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
               <img class="mx-auto rounded-circle" src="{{ asset('assets/img/team/1.jpg') }}" alt="">
               <h4>Dr. Bukola Adesina</h4>
               <p class="text-muted">Minister Of Agriculture</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
           <div class="col-sm-4">
@@ -288,23 +272,6 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
               <img class="mx-auto rounded-circle" src="{{ asset('assets/img/team/2.jpg') }}" alt="">
               <h4>Larry Parker</h4>
               <p class="text-muted">Lead Marketer</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
           <div class="col-sm-4">
@@ -312,26 +279,10 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
               <img class="mx-auto rounded-circle" src="{{ asset('assets/img/team/3.jpg') }}" alt="">
               <h4>Diana Pertersen</h4>
               <p class="text-muted">Lead Developer</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
+        <hr>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
             <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
@@ -340,7 +291,7 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
       </div>
     </section>
 
-    <!-- Clients -->
+    {{-- <!-- Clients -->
     <section class="py-5">
       <div class="container">
         <div class="row">
@@ -366,47 +317,57 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
-    <!-- Contact -->
+    <!-- Contact or zregister Section-->
     <section id="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h2 class="section-heading text-uppercase">Register Now</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <form id="contactForm" name="sentMessage" novalidate="novalidate">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                    <p class="help-block text-danger"></p>
+
+      
+
+               <form class="form-horizontal" method="POST" action="{{url('agric-business-expo/store')}}">
+                  <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
+                          <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                          <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
+                          <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                          <input class="form-control" id="phone" name="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
+                          <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" placeholder="What Do You Intend To Benefit From The Program *" required="required" data-validation-required-message="Please enter a message."></textarea>
+                        <p class="help-block text-danger"></p>
+                      </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    
+                    <div class="col-lg-12 text-center">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                              <button id="" name="" class="btn btn-primary btn-xl text-uppercase">Register Now</button>
+                            </div>
+                        </div>
+                          {{csrf_field()}}
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-lg-12 text-center">
-                  <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
-                </div>
-              </div>
             </form>
           </div>
         </div>
@@ -418,7 +379,7 @@ Second Turn after Oando Filling Station, Jakande (Salem Bus stop), Lekki/Epe Exp
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2018</span>
+            <span class="copyright">Copyright &copy; Agrovest 2018</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">

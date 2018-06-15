@@ -134,5 +134,6 @@
 </div>
 <!-- /.MultiStep Form -->
         </div>
+        <p>i am a boy</p>
     </div>
     <script src="{{ asset('assets/js/multidesign.js') }}"></script>

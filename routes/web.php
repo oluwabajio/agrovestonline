@@ -30,32 +30,39 @@ Route::get('/designquestions', function () {
 Route::get('/agric-business-expo', function () {
     return view('agricbusinessexpo');
 });
-Route::get('/admin', function () {
-    return view('admindashboard');
+
+//admin dashboard
+
+Route::get('/dashboard', 'Controller@db');
+
+Route::delete('/dashboard/users/{id}', ['uses' =>'Controller@destroy']);
+
+Route::get('/user', function () {
+    return view('users.index');
 });
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
-
-Route::get('/dashboard/users', function () {
-    return view('dashboard.tables');
-});
-
-Route::get('/dashboard/basic', function () {
-    return view('dashboard.basic');
-});
+Route::get('/dashboard/users', 'Controller@registeredUser');
 
 
-Route::get('/dashboard/standard', function () {
-    return view('dashboard.standard');
-});
+Route::resource('/dashboard/basic', 'BasicController');
+
+Route::resource('/dashboard/premium', 'PremiumController');
+
+Route::resource('/dashboard/standard', 'StandardController');
+
+Route::resource('/dashboard/expo', 'ExpoUserController');
+
+Route::post('/agric-business-expo/store', 'ExpoUserController@store');
+
+Route::resource('/dashboard/newsletters', 'NewsletterController');
+
+Route::post('/newsletters/store', 'NewsletterController@store');
 
 
-Route::get('/dashboard/premium', function () {
-    return view('dashboard.premium');
-});
+
+// Route::delete('/delete/{id}', 'BasicController@destroy');
+
+
 
 
 
