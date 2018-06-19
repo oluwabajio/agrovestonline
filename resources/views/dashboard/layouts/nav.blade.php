@@ -69,12 +69,19 @@
           </ul>
         </li>
        
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Logout</span>
           </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+        </form>
+
         </li>
+        
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
@@ -84,7 +91,7 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
             <span class="d-lg-none">Messages
@@ -117,8 +124,11 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item small" href="#">View all messages</a>
           </div>
-        </li>
-        <li class="nav-item dropdown">
+        </li> --}}
+
+
+
+        {{-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-bell"></i>
             <span class="d-lg-none">Alerts
@@ -160,7 +170,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item small" href="#">View all alerts</a>
           </div>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
             <div class="input-group">
@@ -173,10 +183,21 @@
             </div>
           </form>
         </li>
+        <li>
+            <a id="" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+             {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
+        </li>  
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
+            <a class="nav-link" data-toggle="modal" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"> Logout</a>
+                
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+            </form>
+    
+        </li>      
       </ul>
     </div>
   </nav>
@@ -203,7 +224,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
-    <!-- Logout Modal-->
+    {{-- <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -220,7 +241,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('assets/dashboard/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

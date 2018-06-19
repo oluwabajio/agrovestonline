@@ -21,6 +21,7 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
+                  <th>S/N</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th></th>
@@ -29,6 +30,7 @@
               </thead>
               <tfoot>
                 <tr>
+                  <th>S/N</th>
                   <th>Name</th>
                   <th>Email</th>
                   <th></th>
@@ -48,6 +50,7 @@
                 </tr> --}}
                   @foreach($rusers2 as $rus)
                       <tr>  
+                        <td>{{$loop->index+1}}</td>
                         <td>{{$rus->name}}</td>
                         <td>{{$rus->email}}</td>
                         <th> <form action="{{url('dashboard/users/'.$rus->id)}}" method="post">

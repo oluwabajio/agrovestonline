@@ -33,7 +33,7 @@
               
                   @foreach($newsletter as $news)
                       <tr>  
-                        <td>{{$news->id}}</td>
+                        <td>{{$loop->index+1}}</td>
                         <td>{{$news->email}}</td>
                         <td>{{$news->created_at}}</td>
                         <th>

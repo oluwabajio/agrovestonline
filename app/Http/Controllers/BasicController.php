@@ -42,6 +42,26 @@ class BasicController extends Controller
     public function store(Request $request)
     {
         //
+
+        $basic = new Basic;
+        $basic->name = $request->input('name');
+        $basic->email = $request->input('email');
+        $basic->phone = $request->input('phone');
+        $basic->age = $request->input('age');
+        $basic->category = $request->input('category');
+        $basic->question1 = $request->input('question1', false);
+        $basic->answer1 = $request->input('answer1', false);
+        $basic->question2 = $request->input('question2', false);
+        $basic->answer2 = $request->input('answer2', false);
+        //get user id from database
+        $basic->user_id = auth()->user()->id;
+        $basic->save();
+
+        return redirect('/posts')->with('success', 'Post Created');
+
+
+
+        
     }
 
     /**

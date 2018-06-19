@@ -36,7 +36,7 @@
                     <div class="footer-widget ">
                         <div class="footer-title">Quick Links</div>
                         <ul class="list-unstyled">
-                            <li><a href="#">News</a></li>
+                            <li><a href="#">admin@agrovest.com.ng</a></li>
                             <li><a href="#">Contact us</a></li>
                             <li><a href="#">FAQ</a></li>
                         </ul>

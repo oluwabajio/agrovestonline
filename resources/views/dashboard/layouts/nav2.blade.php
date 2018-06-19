@@ -34,7 +34,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="{{ url('user/question') }}">
+          <a class="nav-link" href="{{ url('user/question/create') }}">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Ask Question</span>
           </a>
@@ -45,13 +45,17 @@
             <span class="nav-link-text">See Answers</span>
           </a>
         </li>
-      
-       
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Logout</span>
           </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+        </form>
+
         </li>
       </ul>
       <ul class="navbar-nav sidenav-toggler">
@@ -74,10 +78,24 @@
             </div>
           </form>
         </li>
+       
+        <li>
+            <a id="" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+             {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
+        </li>  
         <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>
+            <a class="nav-link" data-toggle="modal" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"> Logout</a>
+                
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+            </form>
+    
+        </li>     
+
+
       </ul>
     </div>
   </nav>

@@ -42,7 +42,8 @@ class Controller extends BaseController
         //
         $rusers = User::find($id);
         $rusers->delete();
-        return redirect('dashboard.users.index')->with('success', 'User Deleted');
+        // return redirect('Controller@registeredUser')->with('success', 'User Deleted');
+        return redirect()->action('Controller@registeredUser');
     
     }
 }
