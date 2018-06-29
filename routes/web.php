@@ -88,6 +88,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 
 
 // Route::delete('/delete/{id}', 'BasicController@destroy');
@@ -108,7 +110,9 @@ Route::get('/standard', function () {
 Route::get('/premium', function () {
     return view('premium');
 });
-
+Route::get('/testo', function () {
+    return view('testo');
+});
 
 
 Auth::routes();
