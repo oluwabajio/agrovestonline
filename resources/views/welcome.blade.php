@@ -14,10 +14,10 @@
               </div>
                   <!-- /.col-lg-8 -->
                   <div class="col-lg-4">
-                      <br>
+                      
                     <h1>Agricultural Advice at your finger tips</h1>
                     <p>Get quality answers to your agricultural questions in less than 10 minutes.</p>
-                    <br>
+                    <br><br>
                     <a class="btn btn-primary btn-lg" style=" background-color: #008000 !important; border-color:#008000 !important; width: 100%;" href="{{url('user')}}">Ask Questions Now</a>
                   </div>
                   <!-- /.col-md-4 -->

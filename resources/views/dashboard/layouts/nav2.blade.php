@@ -34,17 +34,31 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="{{ url('user/question/create') }}">
+          <a class="nav-link" href="{{ url('user') }}">
             <i class="fa fa-fw fa-area-chart"></i>
             <span class="nav-link-text">Ask Question</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="{{ url('user/answer') }}">
-            <i class="fa fa-fw fa-table"></i>
+     
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Answers">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">See Answers</span>
           </a>
+          <ul class="sidenav-second-level collapse" id="collapseComponents">
+            <li>
+              <a href="{{ url('user/basic-question') }}">Basic</a>
+            </li>
+            <li>
+              <a href="{{ url('user/standard-question') }}">Standard</a>
+            </li>
+            <li>
+              <a href="{{ url('user/premium-question') }}">Premium</a>
+            </li>
+          </ul>
         </li>
+
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link" href="{{ route('logout') }}"
         onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();">

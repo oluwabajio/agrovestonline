@@ -19,30 +19,30 @@
           <i class="fa fa-table"></i> Fill The Form Below</div>
           <div class="container" style="margin-top:0px; padding:60px;" >
 
-                <form role="form" method="POST" action="{{url('dashboard/basic')}}">
+                <form role="form" method="POST" action="{{url('/user/basic-question')}}">
                     {{csrf_field()}}
                     <div class="form-group row">
                         <label for="name" class="col-2 col-form-label">Name</label>
                         <div class="col-10">
-                        <input class="form-control" type="text" id="name" name="name">
+                        <input class="form-control" type="text" id="name" name="name"required="required" data-validation-required-message="Please enter your name.">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-2 col-form-label">Email</label>
                         <div class="col-10">
-                        <input class="form-control" type="email" id="email" name="email">
+                        <input class="form-control" type="email" id="email" name="email" required="required" data-validation-required-message="Please enter your email.">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-2 col-form-label">Phone</label>
                         <div class="col-10">
-                        <input class="form-control" type="text" id="phone" name="phone">
+                        <input class="form-control" type="text" id="phone" name="phone" required="required" data-validation-required-message="Please enter your phone number.">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="age" class="col-2 col-form-label">Age</label>
                         <div class="col-10">
-                        <input class="form-control" type="text"  id="age" name="age">
+                        <input class="form-control" type="text"  id="age" name="age" required="required" data-validation-required-message="Please enter your age.">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -57,17 +57,11 @@
                              </select>
                             </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
-                        <div class="col-10">
-                        <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-                        </div>
-                    </div>
                     
                     <div class="form-group row">
                         <label for="question1" class="col-2 col-form-label">Question 1</label>
                         <div class="col-10">
-                        <input type="text" class="form-control" id="question1" name="question1" placeholder="Question 1">
+                        <input type="text" class="form-control" id="question1" name="question1" placeholder="Question 1" required="required" data-validation-required-message="Please enter question 1.">
                         </div>
                     </div>
                     <div class="form-group row">

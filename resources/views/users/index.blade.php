@@ -30,7 +30,7 @@
                 <li>Fast Response</li>
                 <li>Email Support</li>
               </ul>
-              <a href="{{ url('user/question/create') }}" class="btn btn-lg btn-block btn-outline-primary">Ask Your Questions</a>
+              <a href="{{ url('user/basic-question/create') }}" class="btn btn-lg btn-block btn-outline-primary">Ask Your Questions</a>
             </div>
           </div>
           <div class="card mb-4 box-shadow">

@@ -1,6 +1,7 @@
 @extends('dashboard.layouts.nav')
 
 @section('content2')
+<div class="container">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -10,72 +11,50 @@
       </ol>
       <!-- Example DataTables Card-->
      
-      @if(count($basic) > 0)
+      @if(count($premium) > 0)
 
 
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> View All Basic Questions</div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Age</th>
-                  <th>Category</th>
-                  <th>Date</th>
-                  <th></th>
-                
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Age</th>
-                  <th>Category</th>
-                  <th>Date</th>
-                  <th></th>
-                 
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>Tiger@gmail.com</td>
-                  <td>61</td>
-                  <td>Crops</td>
-                  <td>2011/04/25</td>
-                  <th><a href="#" type="submit" class="btn bg--primary"><span>View</span></a>
-                      <a href="#" type="submit" class="btn bg--primary"><span>Edit</span></a>
-                      <a href="#" type="submit" class="btn bg--primary"><span>Delete</span></a></th>
-               
-                 
-                </tr>
-                  @foreach($basic as $bas)
-                      <tr>  
-                        <td>{{$bas->name}}</td>
-                        <td>{{$bas->email}}</td>
-                        <td>{{$bas->age}}</td>
-                        <td>{{$bas->category}}</td>
-                        <td>{{$bas->created_at}}</td>
-                        <th><a href="basic/{{$bas->id}}" type="submit" class="btn bg--primary"><span>View</span></a>
-                          <a href="#" type="submit" class="btn bg--primary"><span>Edit</span></a>
-                          <a href="#" type="submit" class="btn bg--primary"><span>Delete</span></a></th>
-                   
-                     </tr>
-                  @endforeach                
-              </tbody>
-            </table>
+        @foreach($premium as $pre)
+
+        @if($pre->who == "q")
+        <div class="card">
+          <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted"> {{ Auth::user()->name }}</h6>
+            {{$pre->message}}
           </div>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
+        @else
+        <div class="card">
+            <div class="card-body float-right">
+                <h6 class="card-subtitle mb-2 text-muted float-right">Admin</h6><br>
+              <span class="float-right">{{$pre->message}}</span>
+            </div>
+          </div>
+        @endif
+        @endforeach                
+        
       @else 
       <p>No Post Found</p>
-
       @endif
 
+      <div class="form-area" style="bottom: 0">  
+        <form role="form" method="POST" action="{{url('')}}">
+            {{csrf_field()}}
+            <h3 style="margin-bottom: 25px; text-align: center;">Answer Questions</h3>
+            <div class="form-group container">
+              <div class="row">
+                <div class="col-md-11">
+                 <input name="_method" type="hidden" value="PUT">
+                <input type="text" class="form-control" id="nameq" width="70%" name="name"  placeholder="Ask Question" required>
+                </div>
+                <div class="col-md-1">
+                <button type="submit" id="submit" name="submit" class="btn btn-primary pull-left">Submit</button>
+                </div>
+              </div>
+            </div> 
+         <br><br><br>
+       </form>
+      </div>
+</div>
       @endsection('content2')
+      

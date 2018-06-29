@@ -61,6 +61,19 @@ Route::resource('/dashboard/premium', 'PremiumController');
 
 Route::resource('/dashboard/standard', 'StandardController');
 
+Route::resource('/user/basic', 'BasicQController');
+
+Route::resource('/user/premium', 'PremiumQController');
+
+Route::resource('/user/standard', 'StandardQController');
+
+Route::resource('/user/basic-question', 'UserBasicQuestionController');
+
+Route::resource('/user/standard-question', 'UserStandardQuestionController');
+
+Route::resource('/user/premium-question', 'UserPremiumQuestionController');
+
+
 Route::resource('/dashboard/expo', 'ExpoUserController');
 
 Route::post('/agric-business-expo/store', 'ExpoUserController@store');
@@ -69,11 +82,7 @@ Route::resource('/dashboard/newsletters', 'NewsletterController');
 
 Route::post('/newsletters/store', 'NewsletterController@store');
 
-Route::resource('/user/question', 'UserQuestionController');
 
-Route::resource('/user/standard-question', 'UserStandardQuestionController');
-
-Route::resource('/user/premium-question', 'UserPremiumQuestionController');
 
 Route::get('/about', function () {
     return view('about');

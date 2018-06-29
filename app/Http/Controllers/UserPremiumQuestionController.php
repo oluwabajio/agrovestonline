@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Premium;
+
 
 class UserPremiumQuestionController extends Controller
 {
@@ -14,6 +16,9 @@ class UserPremiumQuestionController extends Controller
     public function index()
     {
         //
+        $premium = Premium::all();
+        //load view
+        return view('users.pquestion.index')->with('premium', $premium);
     }
 
     /**

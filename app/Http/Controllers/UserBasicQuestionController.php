@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Basic;
 
-class BasicController extends Controller
+class UserBasicQuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,13 @@ class BasicController extends Controller
      */
     public function index()
     {
-       //fetch all data in Basic Model in an array
-        //return Basic::all();
-          
+        //
+
+
         //fetch array data and pass into array into view
         $basic = Basic::all();
         //load view
-        return view('dashboard.basic.index')->with('basic', $basic);
+        return view('users.bquestion.index')->with('basic', $basic);
     }
 
     /**
@@ -31,6 +31,7 @@ class BasicController extends Controller
     public function create()
     {
         //
+        return view('users.bquestion.create');
     }
 
     /**
@@ -42,7 +43,7 @@ class BasicController extends Controller
     public function store(Request $request)
     {
         //
-
+        
         $basic = new Basic;
         $basic->name = $request->input('name');
         $basic->email = $request->input('email');
@@ -57,12 +58,8 @@ class BasicController extends Controller
         $basic->user_id = auth()->user()->id;
         $basic->save();
 
-        return redirect('/posts')->with('success', 'Post Created');
-        
+        return redirect('/user')->with('success', 'Post Created');
     }
-
-
-
 
     /**
      * Display the specified resource.
@@ -72,11 +69,7 @@ class BasicController extends Controller
      */
     public function show($id)
     {
-        //return all data in json
-       // return Basic::find($id);
-
-       $basic = Basic::find($id);
-       return view('dashboard.basic.show')->with('basic', $basic);
+        //
     }
 
     /**
@@ -89,8 +82,7 @@ class BasicController extends Controller
     {
         //
         $basic = Basic::find($id);
-        return view('dashboard.basic.edit')->with('basic', $basic);
-    
+        return view('users.bquestion.edit')->with('basic', $basic);
     }
 
     /**
@@ -103,27 +95,17 @@ class BasicController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'age' => 'required',
-            'category' => 'required'
-        ]);
-        //Update post
-        $basic = Basic::find($id);
-        $basic->name = $request->input('name');
-        $basic->email = $request->input('email');
-        $basic->phone = $request->input('phone');
-        $basic->age = $request->input('age');
-        $basic->category = $request->input('category');
-        $basic->question1 = $request->input('question1', false);
-        $basic->answer1 = $request->input('answer1', false);
-        $basic->question2 = $request->input('question2', false);
-        $basic->answer2 = $request->input('answer2', false);
-        $basic->save();
+     //Update post
+     $basic = Basic::find($id);
+     $basic->name = $request->input('name');
+     $basic->category = $request->input('category');
+     $basic->question1 = $request->input('question1', false);
+     $basic->answer1 = $request->input('answer1', false);
+     $basic->question2 = $request->input('question2', false);
+     $basic->answer2 = $request->input('answer2', false);
+     $basic->save();
 
-        return redirect('dashboard/basic/'.$id)->with('success', 'Post Updated');
+     return redirect('/user')->with('success', 'Post Updated');
     }
 
     /**
@@ -135,10 +117,5 @@ class BasicController extends Controller
     public function destroy($id)
     {
         //
-        $basic = Basic::find($id);
-        $basic->delete();
-        return redirect('dashboard/basic')->with('success', 'Post Deleted');
-    
     }
-    
 }

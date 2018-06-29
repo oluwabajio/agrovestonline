@@ -46,11 +46,11 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="{{ url('dashboard/newsletters') }}">
-                  <i class="fa fa-fw fa-table"></i>
-                  <span class="nav-link-text">Newsletters</span>
-                </a>
-              </li>
+          <a class="nav-link" href="{{ url('dashboard/newsletters') }}">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Newsletters</span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
@@ -83,6 +83,7 @@
         </li>
         
       </ul>
+      
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">

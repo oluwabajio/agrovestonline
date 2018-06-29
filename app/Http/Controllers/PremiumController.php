@@ -14,8 +14,9 @@ class PremiumController extends Controller
      */
     public function index()
     {
+        $premium = Premium::all();
         //load view
-        return view('dashboard.premium.index');
+        return view('dashboard.premium.index')->with('premium', $premium);
     }
 
     /**
